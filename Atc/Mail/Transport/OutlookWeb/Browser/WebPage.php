@@ -1,11 +1,5 @@
 <?php
-
 /**
- * OutlookWeb connection object
- *
- * Loads an instance of Atc_Mail_Protocol_Curl
- *   and interacts with an outlook/exchange web application.
- *
  * @category   Atc
  * @package    Atc_Mail
  * @subpackage Transport
@@ -24,7 +18,7 @@ abstract class Atc_Mail_Transport_OutlookWeb_Browser_WebPage
 
 
     /**
-     * @param Audible_Browser
+     * @param Atc_Mail_Transport_OutlookWeb_Browser
      */
     public function __construct( Atc_Mail_Transport_OutlookWeb_Browser &$browser )
     {
@@ -66,14 +60,14 @@ abstract class Atc_Mail_Transport_OutlookWeb_Browser_WebPage
 
 
     /**
-     * @param Audible_Browser
+     * @param Browser
      */
     protected function _setBrowser( &$newValue )
     {
         $this->_properties['Browser'] = $newValue;
     }
     /**
-     * @return Audible_Browser
+     * @return Browser
      */
     protected function _getBrowser()
     {

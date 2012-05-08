@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * @see Atc_Mail_Transport_OutlookWeb_Browser_CurlSession
  */

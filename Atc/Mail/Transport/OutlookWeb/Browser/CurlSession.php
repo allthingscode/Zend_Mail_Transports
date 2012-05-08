@@ -1,8 +1,7 @@
 <?php
-
 /**
  * This class implements the singleton pattern.
- * @package Audible
+ * @package Atc_Mail
  */
 final class Atc_Mail_Transport_OutlookWeb_Browser_CurlSession
 {

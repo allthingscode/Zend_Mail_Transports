@@ -1,7 +1,4 @@
 <?php
-
-
-
 /**
  * @see Zend_Mail_Transport_Abstract
  */
@@ -212,11 +209,6 @@ final class Atc_Mail_Transport_OutlookWeb extends Zend_Mail_Transport_Abstract
     public function _sendMail()
     {
         $this->_validateRequiredProperties();
-
-        //print_r( $this );
-
-
-
 
         $browser = new Atc_Mail_Transport_OutlookWeb_Browser( $this );
 
