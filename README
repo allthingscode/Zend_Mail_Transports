@@ -1,4 +1,17 @@
 Zend_Mail_Transports
 ====================
 
-Various transports to be used with Zend_Mail
+This is a collection of various transports to be used with Zend_Mail.
+
+They all interact with web servers, rather than SMTP servers.
+While they are crude in nature, they come in really handy when you 
+need to send email from a system that does not readily have access to
+or support SMTP - due to firewalls or local libraries.
+
+Consequently, performance is not suitable for mass mailing, 
+but no-one likes spam anyway.
+(Please don't use this for spam!)
+
+Soon to come:
+ * GmailWeb
+
