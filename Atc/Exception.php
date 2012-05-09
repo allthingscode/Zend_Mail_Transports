@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * @category   Atc
  * @package    Atc

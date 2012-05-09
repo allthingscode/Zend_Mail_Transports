@@ -18,13 +18,9 @@ require_once 'Atc/Mail/Transport/OutlookWeb/Browser/WebPage/ComposeEmail.php';
 
 
 /**
- * Web browser client
- *
- *
- *
  * @category   Atc
- * @package    Atc_Mail_Transport_OutlookWeb
- * @subpackage Browser
+ * @package    Atc_Mail
+ * @subpackage Atc_Mail_Transport
  */
 final class Atc_Mail_Transport_OutlookWeb_Browser
 {
@@ -215,7 +211,8 @@ final class Atc_Mail_Transport_OutlookWeb_Browser
 
 
     /**
-     *
+     * This is what gets called from Zend_Mail
+     *   when the email finally needs to be sent.
      */
     public function sendEmail()
     {
@@ -287,6 +284,8 @@ final class Atc_Mail_Transport_OutlookWeb_Browser
 
     /**
      * Helper function to generate post data strings
+     * @todo There has got to be an existing php function 
+     *         or Zend code that already does this.
      */
 	public function CreatePostString( $postArray )
 	{
@@ -302,8 +301,9 @@ final class Atc_Mail_Transport_OutlookWeb_Browser
 	        $postString .= urlencode( $varName  ) . '=' .
 	                       urlencode( $varValue ) . '&';
 	    }
+        $postString = substr( $postString, 0, -1 );
 
-	    return substr( $postString, 0, -1 );
+	    return $postString;
 	}
 
     // ------------------------------------------------------------------------

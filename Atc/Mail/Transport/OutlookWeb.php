@@ -189,6 +189,18 @@ final class Atc_Mail_Transport_OutlookWeb extends Zend_Mail_Transport_Abstract
         $zendMail = $this->_mail;
         return $zendMail;
     }
+    /**
+     * @return bool
+     */
+    public function hasZendMail()
+    {
+        if ( false === isset( $this->_mail ) ) {
+            return false;
+        }
+        if ( false === ( $this->_mail instanceof Zend_Mail ) ) {
+            return false;
+        }
+    }
     // ------------------------------------------------------------------------
 
 
@@ -208,6 +220,7 @@ final class Atc_Mail_Transport_OutlookWeb extends Zend_Mail_Transport_Abstract
      */
     public function _sendMail()
     {
+        // This will throw an exception if anything invalid is found
         $this->_validateRequiredProperties();
 
         $browser = new Atc_Mail_Transport_OutlookWeb_Browser( $this );
@@ -235,6 +248,9 @@ final class Atc_Mail_Transport_OutlookWeb extends Zend_Mail_Transport_Abstract
         }
         if ( false === $this->hasPassword() ) {
             throw new Atc_Mail_Transport_Exception( 'Invalid password Property Value' );
+        }
+        if ( false === $this->hasZendMail() ) {
+            throw new Atc_Mail_Transport_Exception( '_sendMail requires a registered Zend_Mail object' );
         }
     }
 

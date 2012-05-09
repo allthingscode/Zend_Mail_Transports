@@ -1,12 +1,19 @@
 <?php
+/**
+ * @see Atc_Mail_Transport_OutlookWeb_Browser_WebPage
+ */
 require_once 'Atc/Mail/Transport/OutlookWeb/Browser/WebPage.php';
-// ========================================================================================
-
-
-
 
 /**
- * @package Atc
+ * @see Atc_Mail_Transport_Exception  
+ */
+require_once 'Atc/Mail/Transport/Exception.php';
+// ========================================================================================
+
+/**
+ * @category   Atc
+ * @package    Atc_Mail
+ * @subpackage Transport
  * @author Matthew Hayes <Matthew.Hayes@AllThingsCode.com>
  */
 final class Atc_Mail_Transport_OutlookWeb_Browser_WebPage_SignIn extends Atc_Mail_Transport_OutlookWeb_Browser_WebPage
@@ -82,7 +89,7 @@ final class Atc_Mail_Transport_OutlookWeb_Browser_WebPage_SignIn extends Atc_Mai
 	        throw new Atc_Mail_Transport_Exception( 'Unable to retrieve hidcanary value after successful sign in' );
         }
 
-        // Remember this value so that it can be used later.
+        // Remember this value so that it can be used when posting other web forms later.
         $browser->setHidCanary( $pregMatches[1] );
     }
 

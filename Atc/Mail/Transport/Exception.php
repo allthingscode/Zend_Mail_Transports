@@ -1,10 +1,9 @@
 <?php
-
-
 /**
  * @see Atc_Mail_Exception
  */
 require_once 'Atc/Mail/Exception.php';
+// ============================================================================
 
 
 /**

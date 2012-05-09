@@ -1,8 +1,20 @@
 <?php
+/**
+ * @see Atc_Mail_Transport_OutlookWeb_Browser_WebPage
+ */
 require_once 'Atc/Mail/Transport/OutlookWeb/Browser/WebPage.php';
 
 /**
- * @package Atc
+ * @see Atc_Mail_Transport_Exception
+ */
+require_once 'Atc/Mail/Transport/Exception.php';
+// ============================================================================
+
+
+/**
+ * @category   Atc
+ * @package    Atc_Mail
+ * @subpackage Transport
  * @author Matthew Hayes <Matthew.Hayes@AllThingsCode.com>
  */
 final class Atc_Mail_Transport_OutlookWeb_Browser_WebPage_ComposeEmail extends Atc_Mail_Transport_OutlookWeb_Browser_WebPage
@@ -35,7 +47,6 @@ final class Atc_Mail_Transport_OutlookWeb_Browser_WebPage_ComposeEmail extends A
         $isKnown = isset( $this->_properties[ $propertyName ] );
         return $isKnown;
     }
-
 
 
     /**
@@ -141,9 +152,7 @@ final class Atc_Mail_Transport_OutlookWeb_Browser_WebPage_ComposeEmail extends A
     // ----- Public Methods ---------------------------------------------------
 
     /**
-     *
-     *
-     *
+     * This mimics posting the Outlook "New Email" web form.
      */
     public function postEmailComposeForm()
     {
@@ -158,7 +167,6 @@ final class Atc_Mail_Transport_OutlookWeb_Browser_WebPage_ComposeEmail extends A
         	'User-Agent: ' . $browser->getUserAgent()
         	);
 
-		// @todo Experiment to see which values are absolutely required
 		$postData = array();
 	    $postData['hidcmdpst'] = 'snd';
 	    $postData['hidmsgimp'] = $this->getImportance();

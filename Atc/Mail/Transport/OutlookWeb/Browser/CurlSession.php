@@ -1,7 +1,16 @@
 <?php
 /**
+ * @see Atc_Mail_Transport_Exception
+ */
+require_once 'Atc/Mail/Transport/Exception.php';
+// ============================================================================
+
+
+/**
  * This class implements the singleton pattern.
- * @package Atc_Mail
+ * @category   Atc
+ * @package    Atc_Mail
+ * @subpackage Transport
  */
 final class Atc_Mail_Transport_OutlookWeb_Browser_CurlSession
 {
